@@ -1,9 +1,60 @@
-{{title}}
-{{users}}
 
+<div>
+
+    <form>
+        <p>nombre: <input type="text" name="nombre" [(ngModel)]="nombre" ></p>
+        <p> Edad: <input type="text" name="edad" [(ngModel)]="edad"  ></p>
+    </form>
+
+    <p> nombre : {{nombre}} </p>
+    <p> edad :{{edad}} </p>
+
+</div>
+
+<hr>
+<form (submit)="guardarUsuario(nuevoUsuario)" >
+
+    <input type="text" #nuevoUsuario >
+    <button> Guardar Usuario </button>
+
+</form>
+
+
+<hr>
 <ul>
-  <li *ngFor="let user of users" > {{user}} </li>
+  <li *ngFor="let user of users"> 
+      {{user }}
+      <button (click)="mostrarAlerta(user)" > Pulsame </button>
+      <button (click)="eliminarUsuario(user)" > X </button>
+    </li>
+</ul>
+
+
+
+<hr/>
+<div>
+
+  <p> nombre : {{nombre}} </p>
+  <p> edad : {{edad}} </p>
+  <p> Calle : {{direccion.calle}} </p>
+  <p> Ciudad : {{direccion.ciudad}} </p>
+  <p> hobbies: </p>
+  <ul>
+    <li *ngFor="let hobbie of hobbies"> {{hobbie}} </li>
+  </ul>
+
+</div>
+<hr/> {{title}} {{users}}
+<hr/>
+<ul>
+
+  <app-usuario *ngFor="let user of users" [nameUser]="user"></app-usuario>
 
 </ul>
+<hr/>
+
+<div *ngIf="activar === true"></div>
+<hr/>
+
 <app-hello-world></app-hello-world>
 <app-hola-mundo></app-hola-mundo>
