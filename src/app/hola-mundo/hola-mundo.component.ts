@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Post } from '../Post';
+import {DataService} from '../data.service';
+
 
 @Component({
   selector: 'app-hola-mundo',
@@ -7,7 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HolaMundoComponent implements OnInit {
 
-  constructor() { }
+  posts = [];
+  constructor(private dataService: DataService) {
+
+    this.dataService.getData().subscribe(data => {
+      this.posts = data;
+    });
+
+   }
 
   ngOnInit() {
   }

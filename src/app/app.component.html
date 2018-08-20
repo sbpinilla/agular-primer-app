@@ -1,32 +1,53 @@
+<ul>
+  <li>
+    <a routerLink="/"> Inicio </a>
+  </li>
+  <li>
+    <a routerLink="/about"> About </a>
+  </li>
+</ul>
 
+<router-outlet></router-outlet>
+
+<!-- 
+<div *ngFor="let post of posts">
+  <h3>{{ post.title}}</h3>
+  <p>{{post.body}}</p>
+</div>
+
+<hr>
 <div>
 
-    <form>
-        <p>nombre: <input type="text" name="nombre" [(ngModel)]="nombre" ></p>
-        <p> Edad: <input type="text" name="edad" [(ngModel)]="edad"  ></p>
-    </form>
+  <form>
+    <p>nombre:
+      <input type="text" name="nombre" [(ngModel)]="nombre">
+    </p>
+    <p> Edad:
+      <input type="text" name="edad" [(ngModel)]="edad">
+    </p>
+  </form>
 
-    <p> nombre : {{nombre}} </p>
-    <p> edad :{{edad}} </p>
+  <p> nombre : {{nombre}} </p>
+  <p> edad :{{edad}} </p>
 
 </div>
 
 <hr>
-<form (submit)="guardarUsuario(nuevoUsuario)" >
+<form (submit)="guardarUsuario(nuevoUsuario)">
 
-    <input type="text" #nuevoUsuario >
-    <button> Guardar Usuario </button>
+  <input type="text" #nuevoUsuario>
+  <button> Guardar Usuario </button>
 
 </form>
 
 
 <hr>
 <ul>
-  <li *ngFor="let user of users"> 
-      {{user }}
-      <button (click)="mostrarAlerta(user)" > Pulsame </button>
-      <button (click)="eliminarUsuario(user)" > X </button>
-    </li>
+  <li *ngFor="let user of users">
+    {{user }}
+    <button (click)="mostrarAlerta(user)"> Pulsame </button>
+    <button (click)="eliminarUsuario(user)"> X </button>
+  </li>
 </ul>
 
 
@@ -58,3 +79,4 @@
 
 <app-hello-world></app-hello-world>
 <app-hola-mundo></app-hola-mundo>
+-->
